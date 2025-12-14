@@ -1,4 +1,4 @@
-variable "output-vpc-id" {
+variable "output_vpc_id" {
   description = "VPC ID"
   type = string
 }

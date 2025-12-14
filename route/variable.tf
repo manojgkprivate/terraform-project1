@@ -1,4 +1,4 @@
-variable "output-vpc-id" {
+variable "output_vpc_id" {
   description = "VPC ID"
   type = string
 }
@@ -21,10 +21,4 @@ variable "private_subnet_id" {
 variable "nat_gatway_id" {
   description = "NAT Gateway ID"
   type = string
-}
-
-variable "vpc_main" {
-  description = "VPC Main ID"
-  type = string
-  default = ""
 }
