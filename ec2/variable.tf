@@ -6,3 +6,7 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "private_subnet_id" {
+  description = "Private subnet ID from subnet module"
+  type = string
+}

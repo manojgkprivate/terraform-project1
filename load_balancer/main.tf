@@ -19,7 +19,7 @@ resource "aws_lb_target_group" "target_group" {
   name     = "target-group"
   port     = 80
   protocol = "HTTP"
-  vpc_id  = var.output-vpc-id
+  vpc_id  = var.output_vpc_id
 
   health_check {
     path                = "/"
