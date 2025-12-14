@@ -1,3 +1,3 @@
-output "output-vpc-id" {
+output "output_vpc_id" {
 	value=aws_vpc.vpc_main.id
 }

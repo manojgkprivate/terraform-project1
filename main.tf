@@ -8,7 +8,7 @@ module "vpc" {
 
 module "subnet" {
   source = "./subnet"
-  vpc_id = module.vpc.output-vpc-id
+  vpc_id = module.vpc.output_vpc_id
   public_subnet_range = "10.0.10.0/28"
     private_subnet_range = "10.0.1.0/28"
     public_subnet_availability = "ap-south-1a"
@@ -18,7 +18,7 @@ module "subnet" {
 
 module "igw" {
     source = "./igw"
-    vpc_id = module.vpc.output-vpc-id
+    vpc_id = module.vpc.output_vpc_id
   
 }
 
@@ -30,7 +30,7 @@ module "nat" {
 
 module "route" {
     source = "./route"
-    vpc_id = module.vpc.output-vpc-id
+    vpc_id = module.vpc.output_vpc_id
     igw_id = module.igw.igw_id
     public_subnet_id = module.subnet.public_subnet_id
     private_subnet_id = module.subnet.private_subnet_id
@@ -45,7 +45,7 @@ module "ec2" {
 
 module "alb" {
     source = "./load_balancer"
-    vpc_id = module.vpc.output-vpc-id
+    vpc_id = module.vpc.output_vpc_id
     subnets = [module.subnet.public_subnet_id,module.subnet.private_subnet_id]
     security_groups = []
     ec2_instance_id = module.ec2.instanced_id
